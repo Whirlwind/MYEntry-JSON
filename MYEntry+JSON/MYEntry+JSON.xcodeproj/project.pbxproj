@@ -1,0 +1,373 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E520F4CFA8D4FDA8E7976EC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F8900C361945E0B61E5A78 /* libPods.a */; };
+		AB87F188171E3DA60054FC8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB87F187171E3DA60054FC8C /* UIKit.framework */; };
+		AB87F18A171E3DA60054FC8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB87F189171E3DA60054FC8C /* Foundation.framework */; };
+		AB87F18C171E3DA60054FC8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB87F18B171E3DA60054FC8C /* CoreGraphics.framework */; };
+		AB87F192171E3DA60054FC8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB87F190171E3DA60054FC8C /* InfoPlist.strings */; };
+		AB87F194171E3DA60054FC8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB87F193171E3DA60054FC8C /* main.m */; };
+		AB87F198171E3DA60054FC8C /* MYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB87F197171E3DA60054FC8C /* MYAppDelegate.m */; };
+		AB87F19A171E3DA60054FC8C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AB87F199171E3DA60054FC8C /* Default.png */; };
+		AB87F19C171E3DA60054FC8C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB87F19B171E3DA60054FC8C /* Default@2x.png */; };
+		AB87F19E171E3DA60054FC8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB87F19D171E3DA60054FC8C /* Default-568h@2x.png */; };
+		AB87F1B0171E3F770054FC8C /* ASIHTTPRequest+MYSign.m in Sources */ = {isa = PBXBuildFile; fileRef = AB87F1A7171E3F770054FC8C /* ASIHTTPRequest+MYSign.m */; };
+		AB87F1B1171E3F770054FC8C /* MYEntryJsonAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = AB87F1A9171E3F770054FC8C /* MYEntryJsonAccess.m */; };
+		AB87F1B2171E3F770054FC8C /* MYJsonAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = AB87F1AC171E3F770054FC8C /* MYJsonAccess.m */; };
+		AB87F1B3171E3F770054FC8C /* MYEntry+JsonAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = AB87F1AF171E3F770054FC8C /* MYEntry+JsonAccess.m */; };
+		AB87F1E8171E49BB0054FC8C /* MYEntry+JSON.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AB87F1E6171E49BA0054FC8C /* MYEntry+JSON.podspec */; };
+		AB87F1E9171E49BB0054FC8C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AB87F1E7171E49BB0054FC8C /* Podfile */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00F8900C361945E0B61E5A78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		995A1D5CABE44B1BAFB79D3B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AB87F184171E3DA60054FC8C /* MYEntry+JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MYEntry+JSON.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB87F187171E3DA60054FC8C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AB87F189171E3DA60054FC8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB87F18B171E3DA60054FC8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB87F18F171E3DA60054FC8C /* MYEntry+JSON-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MYEntry+JSON-Info.plist"; sourceTree = "<group>"; };
+		AB87F191171E3DA60054FC8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB87F193171E3DA60054FC8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB87F195171E3DA60054FC8C /* MYEntry+JSON-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MYEntry+JSON-Prefix.pch"; sourceTree = "<group>"; };
+		AB87F196171E3DA60054FC8C /* MYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYAppDelegate.h; sourceTree = "<group>"; };
+		AB87F197171E3DA60054FC8C /* MYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYAppDelegate.m; sourceTree = "<group>"; };
+		AB87F199171E3DA60054FC8C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AB87F19B171E3DA60054FC8C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AB87F19D171E3DA60054FC8C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AB87F1A6171E3F770054FC8C /* ASIHTTPRequest+MYSign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASIHTTPRequest+MYSign.h"; sourceTree = "<group>"; };
+		AB87F1A7171E3F770054FC8C /* ASIHTTPRequest+MYSign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASIHTTPRequest+MYSign.m"; sourceTree = "<group>"; };
+		AB87F1A8171E3F770054FC8C /* MYEntryJsonAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYEntryJsonAccess.h; sourceTree = "<group>"; };
+		AB87F1A9171E3F770054FC8C /* MYEntryJsonAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYEntryJsonAccess.m; sourceTree = "<group>"; };
+		AB87F1AA171E3F770054FC8C /* MYEntryJsonAccessProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYEntryJsonAccessProtocol.h; sourceTree = "<group>"; };
+		AB87F1AB171E3F770054FC8C /* MYJsonAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYJsonAccess.h; sourceTree = "<group>"; };
+		AB87F1AC171E3F770054FC8C /* MYJsonAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYJsonAccess.m; sourceTree = "<group>"; };
+		AB87F1AE171E3F770054FC8C /* MYEntry+JsonAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MYEntry+JsonAccess.h"; sourceTree = "<group>"; };
+		AB87F1AF171E3F770054FC8C /* MYEntry+JsonAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MYEntry+JsonAccess.m"; sourceTree = "<group>"; };
+		AB87F1E6171E49BA0054FC8C /* MYEntry+JSON.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; name = "MYEntry+JSON.podspec"; path = "../MYEntry+JSON.podspec"; sourceTree = "<group>"; };
+		AB87F1E7171E49BB0054FC8C /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB87F181171E3DA60054FC8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB87F188171E3DA60054FC8C /* UIKit.framework in Frameworks */,
+				AB87F18A171E3DA60054FC8C /* Foundation.framework in Frameworks */,
+				AB87F18C171E3DA60054FC8C /* CoreGraphics.framework in Frameworks */,
+				8E520F4CFA8D4FDA8E7976EC /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB87F17B171E3DA60054FC8C = {
+			isa = PBXGroup;
+			children = (
+				AB87F1E6171E49BA0054FC8C /* MYEntry+JSON.podspec */,
+				AB87F1E7171E49BB0054FC8C /* Podfile */,
+				AB87F18D171E3DA60054FC8C /* MYEntry+JSON */,
+				AB87F186171E3DA60054FC8C /* Frameworks */,
+				AB87F185171E3DA60054FC8C /* Products */,
+				995A1D5CABE44B1BAFB79D3B /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		AB87F185171E3DA60054FC8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB87F184171E3DA60054FC8C /* MYEntry+JSON.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB87F186171E3DA60054FC8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB87F187171E3DA60054FC8C /* UIKit.framework */,
+				AB87F189171E3DA60054FC8C /* Foundation.framework */,
+				AB87F18B171E3DA60054FC8C /* CoreGraphics.framework */,
+				00F8900C361945E0B61E5A78 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB87F18D171E3DA60054FC8C /* MYEntry+JSON */ = {
+			isa = PBXGroup;
+			children = (
+				AB87F1A4171E3F770054FC8C /* Shared */,
+				AB87F196171E3DA60054FC8C /* MYAppDelegate.h */,
+				AB87F197171E3DA60054FC8C /* MYAppDelegate.m */,
+				AB87F18E171E3DA60054FC8C /* Supporting Files */,
+			);
+			path = "MYEntry+JSON";
+			sourceTree = "<group>";
+		};
+		AB87F18E171E3DA60054FC8C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB87F18F171E3DA60054FC8C /* MYEntry+JSON-Info.plist */,
+				AB87F190171E3DA60054FC8C /* InfoPlist.strings */,
+				AB87F193171E3DA60054FC8C /* main.m */,
+				AB87F195171E3DA60054FC8C /* MYEntry+JSON-Prefix.pch */,
+				AB87F199171E3DA60054FC8C /* Default.png */,
+				AB87F19B171E3DA60054FC8C /* Default@2x.png */,
+				AB87F19D171E3DA60054FC8C /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB87F1A4171E3F770054FC8C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AB87F1A5171E3F770054FC8C /* MYDataAccess */,
+				AB87F1AD171E3F770054FC8C /* MYModel */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		AB87F1A5171E3F770054FC8C /* MYDataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				AB87F1A6171E3F770054FC8C /* ASIHTTPRequest+MYSign.h */,
+				AB87F1A7171E3F770054FC8C /* ASIHTTPRequest+MYSign.m */,
+				AB87F1A8171E3F770054FC8C /* MYEntryJsonAccess.h */,
+				AB87F1A9171E3F770054FC8C /* MYEntryJsonAccess.m */,
+				AB87F1AA171E3F770054FC8C /* MYEntryJsonAccessProtocol.h */,
+				AB87F1AB171E3F770054FC8C /* MYJsonAccess.h */,
+				AB87F1AC171E3F770054FC8C /* MYJsonAccess.m */,
+			);
+			path = MYDataAccess;
+			sourceTree = "<group>";
+		};
+		AB87F1AD171E3F770054FC8C /* MYModel */ = {
+			isa = PBXGroup;
+			children = (
+				AB87F1AE171E3F770054FC8C /* MYEntry+JsonAccess.h */,
+				AB87F1AF171E3F770054FC8C /* MYEntry+JsonAccess.m */,
+			);
+			path = MYModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB87F183171E3DA60054FC8C /* MYEntry+JSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB87F1A1171E3DA60054FC8C /* Build configuration list for PBXNativeTarget "MYEntry+JSON" */;
+			buildPhases = (
+				AB87F180171E3DA60054FC8C /* Sources */,
+				AB87F181171E3DA60054FC8C /* Frameworks */,
+				AB87F182171E3DA60054FC8C /* Resources */,
+				BA1E173C3A2A402D9775153D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MYEntry+JSON";
+			productName = "MYEntry+JSON";
+			productReference = AB87F184171E3DA60054FC8C /* MYEntry+JSON.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB87F17C171E3DA60054FC8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MY;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = JameMYG;
+			};
+			buildConfigurationList = AB87F17F171E3DA60054FC8C /* Build configuration list for PBXProject "MYEntry+JSON" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AB87F17B171E3DA60054FC8C;
+			productRefGroup = AB87F185171E3DA60054FC8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB87F183171E3DA60054FC8C /* MYEntry+JSON */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB87F182171E3DA60054FC8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB87F192171E3DA60054FC8C /* InfoPlist.strings in Resources */,
+				AB87F19A171E3DA60054FC8C /* Default.png in Resources */,
+				AB87F19C171E3DA60054FC8C /* Default@2x.png in Resources */,
+				AB87F19E171E3DA60054FC8C /* Default-568h@2x.png in Resources */,
+				AB87F1E8171E49BB0054FC8C /* MYEntry+JSON.podspec in Resources */,
+				AB87F1E9171E49BB0054FC8C /* Podfile in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BA1E173C3A2A402D9775153D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB87F180171E3DA60054FC8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB87F194171E3DA60054FC8C /* main.m in Sources */,
+				AB87F198171E3DA60054FC8C /* MYAppDelegate.m in Sources */,
+				AB87F1B0171E3F770054FC8C /* ASIHTTPRequest+MYSign.m in Sources */,
+				AB87F1B1171E3F770054FC8C /* MYEntryJsonAccess.m in Sources */,
+				AB87F1B2171E3F770054FC8C /* MYJsonAccess.m in Sources */,
+				AB87F1B3171E3F770054FC8C /* MYEntry+JsonAccess.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB87F190171E3DA60054FC8C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB87F191171E3DA60054FC8C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB87F19F171E3DA60054FC8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AB87F1A0171E3DA60054FC8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB87F1A2171E3DA60054FC8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 995A1D5CABE44B1BAFB79D3B /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MYEntry+JSON/MYEntry+JSON-Prefix.pch";
+				INFOPLIST_FILE = "MYEntry+JSON/MYEntry+JSON-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AB87F1A3171E3DA60054FC8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 995A1D5CABE44B1BAFB79D3B /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MYEntry+JSON/MYEntry+JSON-Prefix.pch";
+				INFOPLIST_FILE = "MYEntry+JSON/MYEntry+JSON-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB87F17F171E3DA60054FC8C /* Build configuration list for PBXProject "MYEntry+JSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB87F19F171E3DA60054FC8C /* Debug */,
+				AB87F1A0171E3DA60054FC8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB87F1A1171E3DA60054FC8C /* Build configuration list for PBXNativeTarget "MYEntry+JSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB87F1A2171E3DA60054FC8C /* Debug */,
+				AB87F1A3171E3DA60054FC8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB87F17C171E3DA60054FC8C /* Project object */;
+}
