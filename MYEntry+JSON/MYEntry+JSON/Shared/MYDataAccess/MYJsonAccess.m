@@ -18,6 +18,7 @@
 @interface MYJsonAccess ()
 
 @property (nonatomic, strong) ASIHTTPRequest *request;
+@property (strong, nonatomic) NSArray *errors;
 
 @end
 
@@ -27,16 +28,7 @@
     [ASIHTTPRequest setDefaultCache:[ASIDownloadCache sharedCache]];
     [super initialize];
 }
-#pragma mark - init and dealloc
-- (void)dealloc{
-    _lastError = nil;
-    _apiVersion = nil;
-    _nameSpace = nil;
-    _serverDomain = nil;
-    _request = nil;
-    _securityKey = nil;
-}
-
+#pragma mark - init
 - (id)init {
     if (self = [super init]) {
         self.cachePolicy = ASIUseDefaultCachePolicy;
@@ -193,7 +185,7 @@
 }
 
 - (NSDictionary *)requestURLString:(NSString *)url postValue:(NSDictionary *)values method:(NSString *)method requestHeaders:(NSDictionary *)headers security:(BOOL)security {
-    self.lastError = nil;
+    self.errors = nil;
     [self buildRequest:url method:method params:values requestHeaders:headers];
     if (security && self.securityKey) {
         [self.request buildSecurityParams:self.securityKey postData:values addIDParams:NO];
@@ -205,81 +197,77 @@
     NSDictionary *dic = [[self.request responseString] universalConvertToJSONObject];
     NSArray *errors = dic[@"errors"];
     NSDictionary *error = dic[@"error"];
-    if (errors) {
-        error = errors[0];
+    if (errors == nil && error) {
+        errors = @[error];
     }
     int s = [self.request responseStatusCode];
-    if (error) {
+    if (errors) {
         if ([error isKindOfClass:[NSNull class]]) {
-            [self reportError:url
-                       method:method
-                       status:s
-                         code:nil
-                      message:@"未知错误!"
-                      request:values
-                     response:[self.request responseString]];
+            [self reportErrors:@[@{@"-1": @"未知错误！"}]
+                           url:url
+                        method:method
+                        status:s
+                       request:values
+                      response:[self.request responseString]];
         } else {
-            [self reportError:url
-                       method:method
-                       status:s
-                         code:[error objectForKey:@"code"]
-                      message:[error objectForKey:@"message"]
-                      request:values
-                     response:[self.request responseString]];
-            self.lastError = [NSError errorWithDomain:@"json" code:[error[@"code"] integerValue] userInfo:error];
+            [self reportErrors:errors
+                           url:url
+                        method:method
+                        status:s
+                       request:values
+                      response:[self.request responseString]];
         }
         return nil;
     }
     if (s >= 200 && s < 300) {
         if (dic == nil) {
-            [self reportError:url
-                       method:method
-                       status:s
-                         code:nil
-                      message:@"接收到的数据无法解析！"
-                      request:values
-                     response:[self.request responseString]];
+            [self reportErrors:@[@{@"-1": @"接收到的数据无法解析！"}]
+                           url:url
+                        method:method
+                        status:s
+                       request:values
+                      response:[self.request responseString]];
             return nil;
         }
         LogInfo(@"URL: %@ %@ REQUEST: %@ RESPONSE: %@", method, url, values, dic);
         return dic;
     } else {
         if (s == 0) {
-            [self reportError:url
-                       method:method
-                       status:s
-                         code:nil
-                      message:@"网络连接存在异常"
-                      request:values
-                     response:nil];
+            [self reportErrors:@[@{@"-1": @"网络连接存在异常!"}]
+                           url:url
+                        method:method
+                        status:s
+                       request:values
+                      response:nil];
         } else {
-            [self reportError:url
-                       method:method
-                       status:s
-                         code:nil
-                      message:@"未知错误！"
-                      request:values
-                     response:[self.request responseString]];
+            [self reportErrors:@[@{@"-1": @"未知错误！"}]
+                           url:url
+                        method:method
+                        status:s
+                       request:values
+                      response:[self.request responseString]];
         }
     }
     return nil;
 }
 
 #pragma mark - error
-- (void)reportError:(NSString *)url
-             method:(NSString *)method
-             status:(NSInteger)status
-               code:(NSString *)code
-            message:(NSString *)message
-            request:(NSDictionary *)request
-           response:(NSString *)response {
+- (void)reportErrors:(NSArray *)errors
+                 url:(NSString *)url
+              method:(NSString *)method
+              status:(NSInteger)status
+             request:(NSDictionary *)request
+            response:(NSString *)response {
     if (status == 0) {
         LogError(@"URL: %@ %@ STATE: %d MESSAGE: %@", method, url, status, @"网络连接存在异常");
-    } else if (code == nil) {
-        LogError(@"URL: %@ %@ STATE: %d MESSAGE: %@ REQUEST: %@ RESPONSE: %@", method, url, status, message, request, response);
     } else {
-        LogError(@"URL: %@ %@ STATE: %d CODE: %@ MESSAGE: %@ REQUEST: %@ RESPONSE: %@", method, url, status, code, message, request, response);
+        LogError(@"URL: %@ %@ STATE: %d REQUEST: %@ RESPONSE: %@", method, url, status, request, response);
     }
+    NSMutableArray *es = [[NSMutableArray alloc] initWithCapacity:[errors count]];
+    for (NSDictionary *e in errors) {
+        [es addObject:[NSError errorWithDomain:@"json" code:[e[@"code"] integerValue] userInfo:@{NSLocalizedDescriptionKey: e[@"message"]}]];
+    }
+    self.errors = es;
 }
 
 #pragma mark - override
@@ -311,16 +299,30 @@
 }
 
 + (id)requestAPI:(NSString *)api {
+    return [self requestAPI:api errors:nil];
+}
+
++ (id)requestAPI:(NSString *)api errors:(NSArray **)errors {
     MYJsonAccess *json = [[[self class] alloc] init];
     NSDictionary *dic = [json requestAPI:api];
+    if (errors) {
+        *errors = json.errors;
+    }
     return dic;
 }
 
 + (id)requestAPI:(NSString *)api postValue:(NSDictionary *)values {
+    return [self requestAPI:api postValue:values errors:nil];
+}
+
++ (id)requestAPI:(NSString *)api postValue:(NSDictionary *)values errors:(NSArray **)errors {
     MYJsonAccess *json = [[[self class] alloc] init];
     NSDictionary *dic = [json requestAPI:api
                                 postValue:values
-                          ];
+                         ];
+    if (errors) {
+        *errors = json.errors;
+    }
     return dic;
 }
 

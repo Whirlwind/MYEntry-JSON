@@ -18,7 +18,7 @@
 @property (copy, nonatomic) NSString *securityKey;
 @property (assign, nonatomic) NSInteger cachePolicy;
 
-@property (strong, nonatomic) NSError *lastError;
+@property (readonly, nonatomic) NSArray *errors;
 
 - (NSString *)parseAPI:(NSString *)api method:(NSString **)method args:(NSMutableDictionary **)args;
 - (void)handleParams:(NSMutableDictionary **)params;
@@ -44,7 +44,9 @@
 + (NSString *)apiVersion;
 + (id)requestBaseAPIUrl:(NSString *)url postValue:(NSDictionary *)value;
 + (id)requestAPI:(NSString *)api;
++ (id)requestAPI:(NSString *)api errors:(NSArray **)errors;
 + (id)requestAPI:(NSString *)api postValue:(NSDictionary *)values;
++ (id)requestAPI:(NSString *)api postValue:(NSDictionary *)values errors:(NSArray **)errors;
 
 + (id)useSecurityKey:(NSString *)key;
 @end
