@@ -203,7 +203,7 @@
     int s = [self.request responseStatusCode];
     if (errors) {
         if ([error isKindOfClass:[NSNull class]]) {
-            [self reportErrors:@[@{@"-1": @"未知错误！"}]
+            [self reportErrors:@[@{@"code": @"-1", @"message": @"未知错误！"}]
                            url:url
                         method:method
                         status:s
@@ -221,7 +221,7 @@
     }
     if (s >= 200 && s < 300) {
         if (dic == nil) {
-            [self reportErrors:@[@{@"-1": @"接收到的数据无法解析！"}]
+            [self reportErrors:@[@{@"code": @"-1", @"message": @"接收到的数据无法解析！"}]
                            url:url
                         method:method
                         status:s
@@ -233,14 +233,14 @@
         return dic;
     } else {
         if (s == 0) {
-            [self reportErrors:@[@{@"-1": @"网络连接存在异常!"}]
+            [self reportErrors:@[@{@"code": @"-1", @"message": @"网络连接存在异常!"}]
                            url:url
                         method:method
                         status:s
                        request:values
                       response:nil];
         } else {
-            [self reportErrors:@[@{@"-1": @"未知错误！"}]
+            [self reportErrors:@[@{@"code": @"-1", @"message": @"未知错误！"}]
                            url:url
                         method:method
                         status:s
