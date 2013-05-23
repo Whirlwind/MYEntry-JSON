@@ -19,6 +19,7 @@
 @property (assign, nonatomic) NSInteger cachePolicy;
 
 @property (readonly, nonatomic) NSArray *errors;
+@property (readonly, nonatomic) NSError *lastError;
 
 - (NSString *)parseAPI:(NSString *)api method:(NSString **)method args:(NSMutableDictionary **)args;
 - (void)handleParams:(NSMutableDictionary **)params;

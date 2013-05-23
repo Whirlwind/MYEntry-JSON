@@ -252,6 +252,13 @@
 }
 
 #pragma mark - error
+- (NSError *)lastError {
+    if (self.errors && [self.errors count] > 0) {
+        return [self.errors lastObject];
+    }
+    return nil;
+}
+
 - (void)reportErrors:(NSArray *)errors
                  url:(NSString *)url
               method:(NSString *)method
