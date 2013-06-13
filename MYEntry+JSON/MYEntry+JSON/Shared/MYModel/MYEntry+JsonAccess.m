@@ -35,9 +35,7 @@
     NSString *property = [[self class] convertJsonKeyNameToPropertyName:key];
     SEL setSelector = [[self class] setterFromPropertyString:property];
     if ([self respondsToSelector:setSelector]) {
-        MYPerformSelectorWithoutLeakWarningBegin
-        [self performSelector:setSelector withObject:obj];
-        MYPerformSelectorWithoutLeakWarningEnd
+        [self setValue:obj forKey:property];
     }
 }
 
