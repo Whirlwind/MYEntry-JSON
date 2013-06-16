@@ -18,6 +18,8 @@
 @property (copy, nonatomic) NSString *securityKey;
 @property (assign, nonatomic) NSInteger cachePolicy;
 
+@property (copy, nonatomic) NSString *downloadDestinationPath;
+
 @property (readonly, nonatomic) NSArray *errors;
 @property (readonly, nonatomic) NSError *lastError;
 

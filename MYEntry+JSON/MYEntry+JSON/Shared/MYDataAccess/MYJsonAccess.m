@@ -94,7 +94,7 @@
     if (build)
         [*params setValue:build forKey:@"app_build"];
 
-    [*params addEntriesFromDictionary:@{@"treatment_type": @"face"}];
+//    [*params addEntriesFromDictionary:@{@"treatment_type": @"face"}];
 }
 
 - (void)pickFileStreamFromDictionary:(NSMutableDictionary *)dic to:(NSMutableDictionary *)result withPath:(NSString *)path {
@@ -189,6 +189,9 @@
     [self buildRequest:url method:method params:values requestHeaders:headers];
     if (security && self.securityKey) {
         [self.request buildSecurityParams:self.securityKey postData:values addIDParams:NO];
+    }
+    if (self.downloadDestinationPath) {
+        [self.request setDownloadDestinationPath:self.downloadDestinationPath];
     }
     LogInfo(@"------BEGIN REQUEST %@: %@", method, url);
     [self.request startSynchronous];
