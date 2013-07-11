@@ -193,6 +193,7 @@
     if (self.downloadDestinationPath) {
         [self.request setDownloadDestinationPath:self.downloadDestinationPath];
     }
+    [self.request setShouldCompressRequestBody:YES];
     LogInfo(@"------BEGIN REQUEST %@: %@", method, url);
     [self.request startSynchronous];
     LogInfo(@"------END REQUEST %@: %@", method, url);
