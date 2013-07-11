@@ -192,6 +192,10 @@
     }
     if (self.downloadDestinationPath) {
         [self.request setDownloadDestinationPath:self.downloadDestinationPath];
+        if (self.progressChangedBlock) {
+            [self.request setDownloadProgressDelegate:self];
+            [self.request incrementDownloadSizeBy:100*1024];
+        }
     }
     [self.request setShouldCompressRequestBody:YES];
     LogInfo(@"------BEGIN REQUEST %@: %@", method, url);
@@ -255,6 +259,11 @@
     return nil;
 }
 
+- (void)request:(ASIHTTPRequest *)request didReceiveBytes:(long long)bytes {
+    if (self.progressChangedBlock) {
+        self.progressChangedBlock(request.contentLength, bytes);
+    }
+}
 #pragma mark - error
 - (NSError *)lastError {
     if (self.errors && [self.errors count] > 0) {
