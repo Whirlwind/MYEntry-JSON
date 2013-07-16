@@ -197,7 +197,7 @@
             [self.request incrementDownloadSizeBy:100*1024];
         }
     }
-    [self.request setShouldCompressRequestBody:YES];
+    [self.request setAllowCompressedResponse:YES];
     LogInfo(@"------BEGIN REQUEST %@: %@", method, url);
     [self.request startSynchronous];
     LogInfo(@"------END REQUEST %@: %@", method, url);
@@ -241,7 +241,7 @@
                       response:[self.request responseString]];
             return nil;
         }
-        LogInfo(@"URL: %@ %@ REQUEST: %@ RESPONSE: %@", method, url, values, dic);
+        LogInfo(@"URL: %@ %@\r\nREQUEST: %@\r\nRESPONSE:%@ %@", method, url, values, [self.request isResponseCompressed] ? @"(Compressed)" : @"", dic);
         return dic;
     } else {
         if (s == 0) {
