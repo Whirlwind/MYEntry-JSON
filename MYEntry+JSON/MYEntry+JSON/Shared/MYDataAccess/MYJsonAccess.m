@@ -203,12 +203,16 @@
     LogInfo(@"------END REQUEST %@: %@", method, url);
     if ([self.request isCancelled]) return nil;
     NSDictionary *dic = [[self.request responseString] universalConvertToJSONObject];
+    int s = [self.request responseStatusCode];
+    if (self.downloadDestinationPath && !(s < 300 && s >= 200)) {
+        dic = [[NSData dataWithContentsOfFile:self.downloadDestinationPath] universalConvertToJSONObject];
+        [[NSFileManager defaultManager] removeItemAtPath:self.downloadDestinationPath error:NULL];
+    }
     NSArray *errors = dic[@"errors"];
     NSDictionary *error = dic[@"error"];
     if (errors == nil && error) {
         errors = @[error];
     }
-    int s = [self.request responseStatusCode];
     if (errors) {
         if ([error isKindOfClass:[NSNull class]]) {
             [self reportErrors:@[@{@"code": @"-1", @"message": @"未知错误！"}]
