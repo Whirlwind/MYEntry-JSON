@@ -29,6 +29,11 @@
     [super initialize];
 }
 #pragma mark - init
+
+- (void)dealloc {
+    [self.request setDownloadProgressDelegate:nil];
+}
+
 - (id)init {
     if (self = [super init]) {
         self.cachePolicy = ASIUseDefaultCachePolicy;
