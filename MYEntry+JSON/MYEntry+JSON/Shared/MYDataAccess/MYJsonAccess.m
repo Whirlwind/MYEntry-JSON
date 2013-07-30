@@ -86,11 +86,15 @@
 - (void)handleParams:(NSMutableDictionary **)params {
     [*params setValue:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleName"] forKey:@"app_name"];
 
-    NSString *mac = [[UIDevice currentDevice] macAddress];
-    if (mac) {
-        [*params setValue:mac forKey:@"mac"];
+    if ([[[UIDevice currentDevice] systemVersion] integerValue] < 7) {
+        NSString *mac = [[UIDevice currentDevice] macAddress];
+        if (mac) {
+            [*params setValue:mac forKey:@"identifier"];
+        }
+    } else {
+        [*params setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forKey:@"identifier"];
     }
-
+    
     NSString *ver = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
     if (ver)
         [*params setValue:ver forKey:@"app_ver" ];
