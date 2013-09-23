@@ -33,10 +33,7 @@
 
 - (void)setPropertyWithJsonKey:(NSString *)key toValue:(NSObject *)obj {
     NSString *property = [[self class] convertJsonKeyNameToPropertyName:key];
-    SEL setSelector = [[self class] setterFromPropertyString:property];
-    if ([self respondsToSelector:setSelector]) {
-        [self setValue:obj forKey:property];
-    }
+    [self setValue:obj forKey:property];
 }
 
 + (NSString *)convertJsonKeyNameToPropertyName:(NSString *)name {
