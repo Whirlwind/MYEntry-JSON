@@ -195,6 +195,7 @@
 
 - (NSDictionary *)requestURLString:(NSString *)url postValue:(NSDictionary *)values method:(NSString *)method requestHeaders:(NSDictionary *)headers security:(BOOL)security {
     self.errors = nil;
+    self.bytesDownloadedSoFar = 0;
     [self buildRequest:url method:method params:values requestHeaders:headers];
     if (security && self.securityKey) {
         [self.request buildSecurityParams:self.securityKey postData:values addIDParams:NO];
@@ -274,7 +275,8 @@
 
 - (void)request:(ASIHTTPRequest *)request didReceiveBytes:(long long)bytes {
     if (self.progressChangedBlock) {
-        self.progressChangedBlock(request.contentLength, bytes);
+        self.bytesDownloadedSoFar += bytes;
+        self.progressChangedBlock(request.contentLength, self.bytesDownloadedSoFar);
     }
 }
 #pragma mark - error

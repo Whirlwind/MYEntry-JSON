@@ -23,6 +23,9 @@
 @property (readonly, nonatomic) NSArray *errors;
 @property (readonly, nonatomic) NSError *lastError;
 
+@property (assign) unsigned long long bytesDownloadedSoFar;
+
+
 @property (copy, nonatomic) void(^progressChangedBlock)(long long totalSize, long long downloadedSize);
 
 - (NSString *)parseAPI:(NSString *)api method:(NSString **)method args:(NSMutableDictionary **)args;
